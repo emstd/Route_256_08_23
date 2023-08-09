@@ -4,7 +4,24 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int DataParts = int.Parse(Console.ReadLine());
+            for (int i = 0; i < DataParts; i++)
+            {
+                int TotalProducts = int.Parse(Console.ReadLine());
+                int[] Prices = new int[TotalProducts];
+                string[] PricesString = Console.ReadLine().Split(' ');
+                for (int j = 0; j < TotalProducts; j++)
+                {
+                    Prices[j] = int.Parse(PricesString[j]);
+                }
+                PriceCalculate(Prices);
+            }
+        }
+
+        static int PriceCalculate(int[] prices)
+        {
+            Array.Sort(prices);
+
         }
     }
 }
