@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A", "A\A.csproj", "{652D08E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "B", "B\B.csproj", "{8DC8FE7C-FC24-46AA-B24E-3801CB7AAC0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C", "C\C.csproj", "{9B369472-6171-4E30-9056-A33FFE3655B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C", "C\C.csproj", "{9B369472-6171-4E30-9056-A33FFE3655B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sandbox", "Sandbox", "{ADC5E520-0124-4CAF-BE50-12E59FEA0E36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{652D08E1-69CA-46FD-B6F8-B052BCB1E03B} = {ADC5E520-0124-4CAF-BE50-12E59FEA0E36}
+		{8DC8FE7C-FC24-46AA-B24E-3801CB7AAC0C} = {ADC5E520-0124-4CAF-BE50-12E59FEA0E36}
+		{9B369472-6171-4E30-9056-A33FFE3655B1} = {ADC5E520-0124-4CAF-BE50-12E59FEA0E36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51CED695-3241-43F6-B46F-D208971949E5}
