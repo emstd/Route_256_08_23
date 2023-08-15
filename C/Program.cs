@@ -21,39 +21,51 @@
 
         static void Grouping(List<int> skills)
         {
-            if (skills.Count == 2)
+
+            var Developers = skills.Select((dev, index) => new Developer(index + 1, dev)).ToList();
+
+            if (Developers.Count == 2)
             {
                 Console.WriteLine("1 2");
                 return;
             }
 
+
             int Position = 0;
             int Subtraction = 0;
             int ResultSubtraction = 0;
 
-            for (int i = 0; i < skills.Count; i++)
+            for (int i = 0; Developers.Count > 0;)
             {
-                for (int j = 1; j < skills.Count; j++)
+                ResultSubtraction = Math.Abs(Developers[i].Skill - Developers[i + 1].Skill);
+                Position = i + 1;
+                for(int j = 1; j < Developers.Count; j++)
                 {
-                    if (i == 0 && j == 1)
-                    {
-                        ResultSubtraction = Math.Abs(skills[i] - skills[j]);
-                        continue;
-                    }
-
-
-                    Subtraction = Math.Abs(skills[i] - skills[j]);
-
+                    Subtraction = Math.Abs(Developers[i].Skill - Developers[j].Skill);
                     if (Subtraction < ResultSubtraction)
                     {
-                        Position = j + 1;
                         ResultSubtraction = Subtraction;
+                        Position = j;
                     }
-
-
-                    ResultSubtraction = Math.Abs(skills[i] - skills[j]);
+                    if (j == Developers.Count - 1)
+                    {
+                        Console.WriteLine(Developers[i].id + " " + Developers[Position].id);
+                        Developers.RemoveAt(i);
+                        Developers.RemoveAt(Position - 1);
+                    }
                 }
             }
         }
+    }
+
+    public class Developer
+    {
+        public Developer(int Id, int skill)
+        {
+            id = Id;
+            Skill = skill;
+        }
+        public int id { get; set; }
+        public int Skill { get; set; }
     }
 }
